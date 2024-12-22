@@ -25,5 +25,5 @@ document.getElementById("submit-btn").addEventListener("click", function () {
   localStorage.setItem("donationEmail", email);
 
   // Redirect to Thank You Page
-  window.location.href = "thankyou.html";
+  window.location.href = "thankyou";
 });

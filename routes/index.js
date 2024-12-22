@@ -11,4 +11,9 @@ router.get("/donate", (_req, res) => {
   res.render("sample");
 });
 
+// Thankyou Route
+router.get("/thankyou", (_req, res) => {
+  res.render("thankyou");
+});
+
 module.exports = router;
