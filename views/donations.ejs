@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Krits Foundation - Donation Form</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/donation.css" />
+  </head>
+  <body>
+    <!-- Receipt Section -->
+    <div class="receipt-container" id="receipt">
+      <h1>Donation Receipt</h1>
+      <p><strong>Amount:</strong> ₹<span id="receipt-amount"></span></p>
+      <p>
+        <strong>Steel Plate Sponsored:</strong> <span id="receipt-plate"></span>
+      </p>
+      <button class="print" onclick="window.print()">Print Receipt</button>
+    </div>
+  </body>
+
+  <script src="/js/donation.js"></script>
+</html>
