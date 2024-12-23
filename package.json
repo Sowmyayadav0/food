@@ -1,0 +1,25 @@
+{
+  "name": "food-starving",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev":"node --watch ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShivangSrivastava/food-fork.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShivangSrivastava/food-fork/issues"
+  },
+  "homepage": "https://github.com/ShivangSrivastava/food-fork#readme",
+  "description": "",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "mongoose": "^8.9.2"
+  }
+}

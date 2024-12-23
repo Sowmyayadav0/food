@@ -1,0 +1,66 @@
+
+.form-container, .receipt-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9fafc;
+}
+.form-container h1, .receipt-container h1 {
+    text-align: center;
+}
+.form-container p {
+    font-size: 0.9rem;
+    text-align: center;
+}
+.form-container label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+.form-container input, .form-container select, .form-container textarea {
+    width: 100%;
+    margin: 5px 0 15px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.form-container input[type="radio"], .form-container input[type="checkbox"] {
+    width: auto;
+    margin-right: 5px;
+}
+.terms {
+    margin-top: 15px;
+}
+.terms label {
+    font-weight: normal;
+}
+.terms a {
+    color: #0078d4;
+    text-decoration: none;
+}
+.terms a:hover {
+    text-decoration: underline;
+}
+.submit-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.submit-btn:hover {
+    background-color: #45a049;
+}
+.receipt-container {
+    margin-top: 30px;
+}
+.receipt-container p {
+    margin: 5px 0;
+}
+.hide {
+    display: none;
+}

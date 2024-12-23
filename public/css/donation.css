@@ -1,0 +1,170 @@
+/* General Body Styling */
+body {
+    background: linear-gradient(to bottom, #f9fafc, #e3e9f0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Header Styling */
+.heading {
+    background-color: #505357;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.heading h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+/* Form Container */
+.form-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin: 100px 15px 30px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.form-container h1 {
+    font-size: 1.4em;
+    text-align: center;
+    color: #333;
+}
+
+.form-container p {
+    text-align: center;
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 20px;
+}
+
+/* Form Elements */
+label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+    font-size: 0.9em;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 5px;
+}
+
+.donation-amounts label {
+    font-weight: normal;
+}
+
+.terms {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.terms a {
+    color: #2c7be5;
+    text-decoration: none;
+}
+
+.terms a:hover {
+    text-decoration: underline;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    font-size: 1em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 10px;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Receipt Container */
+.receipt-container {
+    display: none;
+    margin: 30px auto;
+    background: #fff;
+    padding: 25px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 500px;
+    text-align: center;
+}
+
+.receipt-container h1 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.receipt-container p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+.print {
+    margin-top: 20px;
+    background-color: #007bff;
+}
+
+.print:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .form-container {
+        margin: 100px 10px 20px;
+    }
+
+    .heading h1 {
+        font-size: 1.2em;
+    }
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    .receipt-container, .receipt-container * {
+        visibility: visible;
+    }
+    .receipt-container {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .print {
+        display: none;
+    }
+}
