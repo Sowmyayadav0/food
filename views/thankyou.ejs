@@ -3,33 +3,57 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Thank You for Your Donation</title>
-    <link rel="stylesheet" href="/css/main.css" />
-    <link rel="stylesheet" href="/css/thankyou.css" />
+    <title>Thank You | Serve Starving</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #f9f9f9;
+        text-align: center;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h2 {
+        color: #4caf50;
+        margin-bottom: 20px;
+      }
+      p {
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+      .back-link {
+        margin-top: 30px;
+      }
+      .back-link a {
+        color: #007bff;
+        text-decoration: none;
+        font-size: 16px;
+      }
+      .back-link a:hover {
+        text-decoration: underline;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
-      <h1>Thank You for Your Donation!</h1>
-      <p>Your generosity is making a huge difference.</p>
+      <h1>Thank You, <%= donorName %>!</h1>
+      <p>We appreciate your generous donation of ₹<%= amount %>.</p>
 
-      <div class="receipt">
-        <h2>Donation Receipt</h2>
-        <p>
-          <strong>Donation Amount:</strong> ₹<span id="receipt-amount"></span>
-        </p>
-        <p>
-          <strong>Sponsor a Meal Plate:</strong>
-          <span id="receipt-plate"></span>
-        </p>
-        <p>
-          <strong>Citizenship:</strong> <span id="receipt-citizenship"></span>
-        </p>
-        <p><strong>Name:</strong> <span id="receipt-name"></span></p>
-        <p><strong>Email:</strong> <span id="receipt-email"></span></p>
+      <div class="back-link">
+        <a href="/">Back to Home</a>
       </div>
-
-      <button class="print-btn" onclick="window.print()">Print Receipt</button>
     </div>
   </body>
-  <script src="/js/thankyou.js"></script>
+
+  <script>
+    setTimeout(async () => {
+      window.location.href = "/";
+    }, 10000); // Check every seconds
+  </script>
 </html>

@@ -2,18 +2,13 @@ const express = require("express");
 const router = express.Router();
 
 // Home Route
-router.get("/", (_req, res) => {
-  res.render("index");
+router.get("/", (req, res) => {
+  res.render("home", { user: req.session.user || null });
 });
 
-// Donate Route
-router.get("/donate", (_req, res) => {
-  res.render("sample");
-});
-
-// Thankyou Route
-router.get("/thankyou", (_req, res) => {
-  res.render("thankyou");
+// not found page
+router.get("*", (_req, res) => {
+  res.render("notfound");
 });
 
 module.exports = router;
