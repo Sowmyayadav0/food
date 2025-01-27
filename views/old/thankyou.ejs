@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank You for Your Donation</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/thankyou.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Thank You for Your Donation!</h1>
+      <p>Your generosity is making a huge difference.</p>
+
+      <div class="receipt">
+        <h2>Donation Receipt</h2>
+        <p>
+          <strong>Donation Amount:</strong> ₹<span id="receipt-amount"></span>
+        </p>
+        <p>
+          <strong>Sponsor a Meal Plate:</strong>
+          <span id="receipt-plate"></span>
+        </p>
+        <p>
+          <strong>Citizenship:</strong> <span id="receipt-citizenship"></span>
+        </p>
+        <p><strong>Name:</strong> <span id="receipt-name"></span></p>
+        <p><strong>Email:</strong> <span id="receipt-email"></span></p>
+      </div>
+
+      <button class="print-btn" onclick="window.print()">Print Receipt</button>
+    </div>
+  </body>
+  <script src="/js/thankyou.js"></script>
+</html>

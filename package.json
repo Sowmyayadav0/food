@@ -4,7 +4,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "dev":"node --watch ./"
+    "dev": "node --watch ./"
   },
   "repository": {
     "type": "git",
@@ -18,8 +18,11 @@
   "homepage": "https://github.com/ShivangSrivastava/food-fork#readme",
   "description": "",
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "ejs": "^3.1.10",
     "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "json2csv": "^6.0.0-alpha.2",
     "mongoose": "^8.9.2"
   }
 }

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+  </head>
+  <body>
+    <h1>Admin Dashboard</h1>
+
+    <!-- Statistics Section -->
+    <section>
+      <h2>Platform Statistics</h2>
+      <ul>
+        <li>Total Donations: ₹<%= totalDonations %></li>
+        <li>Number of Donors: <%= totalDonors %></li>
+        <li>Children Fed (Rs 50 per child): <%= childrenFed %></li>
+      </ul>
+    </section>
+
+    <h2>Donation Records</h2>
+
+    <!-- Donor Search and Filter -->
+    <section>
+      <form action="/admin/search" method="GET" id="search-form">
+        <label for="searchKey">Search:</label>
+        <input
+          type="text"
+          id="searchKey"
+          name="searchKey"
+          placeholder="Donor name, email, or date"
+        />
+        <button type="submit">Search</button>
+      </form>
+    </section>
+    <br />
+
+    <!-- Donation Records Section -->
+    <section>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Donor Name</th>
+            <th>Donation Amount</th>
+            <th>Date</th>
+            <th>Payment Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% donationRecords.forEach(record => { %>
+          <tr>
+            <td><%= record.donorName %></td>
+            <td>₹<%= record.amount %></td>
+            <td><%= new Date(record.date).toLocaleDateString() %></td>
+            <td>Success</td>
+            <td>
+              <form
+                action="/admin/delete/<%= record._id %>"
+                method="POST"
+                style="display: inline"
+              >
+                <button type="submit">Delete</button>
+              </form>
+            </td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </section>
+    <br />
+
+    <!-- Admin Actions -->
+    <section>
+      <h2>Admin Actions</h2>
+      <button id="export-data" onclick="exportData()">
+        Export Donation Data (CSV)
+      </button>
+    </section>
+
+    <!-- Admin Logout -->
+    <a href="/">Home</a>
+    <a href="/auth/logout">Logout</a>
+  </body>
+
+  <script>
+    async function exportData() {
+      try {
+        const response = await fetch("/admin/export-csv");
+        if (!response.ok) {
+          throw new Error("Failed to export data");
+        }
+        const blob = await response.blob();
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "donation_data.csv";
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        window.URL.revokeObjectURL(url);
+      } catch (error) {
+        alert("Error exporting data: " + error.message);
+      }
+    }
+  </script>
+</html>
